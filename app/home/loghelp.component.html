@@ -1,0 +1,39 @@
+<ActionBar title="Yumpy Login">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+ <GridLayout style="background-image:~/images/login.jpg;background-repeat: no-repeat; background-size: cover;width:100%"
+    rows="*" col="1">
+    <ScrollView >
+        <StackLayout class="form">
+            <StackLayout class="input-field">
+                <TextField class="input" hint="Email" keyboardType="email"
+                    style="background-color:white;padding:40px 20px 40px 20px;border-radius:10px;width:100%"
+                    autocorrect="false" autocapitalizationType="none">
+                </TextField>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <TextField class="input" hint="Password" secure="true" [(ngModel)]="password"
+                    autocorrect="false"
+                    style="background-color:white;padding:40px 20px 40px 20px;border-radius:10px;width:100%"
+                    autocapitalizationType="none">
+                </TextField>
+            </StackLayout>
+            
+            <Button text="Log In" class="btn btn-secondary" (tap)="login()" 
+                style="background-color:#eee;border-radius:20px;padding:40px 20px 40px 20px;width:100%">
+            </Button>
+            <StackLayout orientation="horizontal" horizontalAlignment="center"
+                class="page">
+                <Label text="Don’t have an account?" style="color:white;">
+                </Label>
+                <Button text="Sign-up" type="button" class="btn btn-link"
+                    style="font-size:10;margin-left:0"
+                    [nsRouterLink]="['/register']">
+                </Button>
+                <Button text="Forgot password ?" type="button"
+                    class="btn btn-link" style="font-size:10;margin-left:0" [nsRouterLink]="['/getpasswordrecoveryemail']">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+        </GridLayout>

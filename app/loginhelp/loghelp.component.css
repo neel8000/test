@@ -1,0 +1,18 @@
+.home-panel{
+	vertical-align: top;
+	font-size: 20;
+	margin: 15;
+}
+.form {
+  margin-left: 30;
+  margin-right: 30;
+  flex-grow: 2;
+  vertical-align: middle;
+}
+.page {
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+  opacity: 0.8;
+}

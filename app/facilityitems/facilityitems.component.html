@@ -1,0 +1,33 @@
+<ActionBar title="Items">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="center">
+            <Label text="**All fields are mandatory.**" class="label font-weight-bold m-b-5">
+                    </Label>
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 
+                 <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1250px">
+  <ng-template let-country="item">
+       
+  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" [nsRouterLink]="['/getdetails']">      
+    <Image [src]="country.imageSrc" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
+    <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+    <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+    <Label [text]="country.grid" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+  
+  </GridLayout>
+</ng-template>
+</ListView>
+              
+                <Button class="btn btn-primary w-full" text="Register"
+                    (tap)="register()"></Button>
+                <Label (tap)="goBack()" text="Already a member? Login here."
+                    class="text-center footnote"></Label>
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+    
+</GridLayout>

@@ -1,0 +1,27 @@
+<ActionBar title="Yumpy">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+   
+    
+</ActionBar>
+<StackLayout >
+<GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st">      
+    <Image src="~/images/03.jpg" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
+    <Label text="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+   
+    <Label text="Tap to add" col="1" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+    
+  </GridLayout>
+ <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1200px" >
+  <ng-template let-country="item">
+       
+  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st">      
+    <Image [src]="country.imageSrc" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
+    <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+   
+    <Label text="Tap to add" col="1" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+  
+  </GridLayout>
+</ng-template>
+</ListView>
+
+</StackLayout>
