@@ -3,25 +3,56 @@
    
     
 </ActionBar>
-<StackLayout >
-<GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st">      
-    <Image src="~/images/03.jpg" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
-    <Label text="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
-   
-    <Label text="Tap to add" col="1" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
-    
-  </GridLayout>
- <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1200px" >
-  <ng-template let-country="item">
-       
-  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st">      
-    <Image [src]="country.imageSrc" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
-    <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
-   
-    <Label text="Tap to add" col="1" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
-  
-  </GridLayout>
-</ng-template>
-</ListView>
+<BottomNavigation >
+   <TabStrip>
+        <TabStripItem>
+            <Image src="font://&#xf015;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="special" (tap)="onOpenDrawerTap()">
+            <Image src="font://&#xf002;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="special" >
+            <Image src="font://&#xf07a;" class="fas t-36" ></Image>
+        </TabStripItem>
+         <TabStripItem class="special" >
+            <Image src="font://&#xf013;" class="fas t-36"></Image>
+        </TabStripItem>
+    </TabStrip>
+    <TabContentItem >
 
-</StackLayout>
+
+ <StackLayout >
+
+  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st">      
+    <Image src="~/images/03.jpg" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
+    <Label text="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>   
+    <Label text="Tap to add" col="1" row="2" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>    
+  </GridLayout>
+
+  <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1000px" >
+        <ng-template let-country="item">      
+          <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" class="st"> 
+            <Label [text]="country.name" textWrap="true" col="1" row="1" fontSize="12" width="80%"   ></Label> 
+            <Label text="Tap to add" col="12" row="1" width="20%" color="#10C2B0" fontSize="12"    style="float:right;margin-left:20;"></Label>
+          </GridLayout>
+        </ng-template>
+  </ListView>
+
+  <Button class="-primary" text="Next >" (tap)="next()"></Button>
+
+</StackLayout >
+
+ </TabContentItem>
+  <TabContentItem >
+<GridLayout ></GridLayout>
+  </TabContentItem>
+  <TabContentItem >
+<GridLayout ></GridLayout>
+  </TabContentItem>
+  <TabContentItem >
+<GridLayout ></GridLayout>
+  </TabContentItem>
+
+
+</BottomNavigation>
+

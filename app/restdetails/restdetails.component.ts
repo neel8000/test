@@ -55,7 +55,12 @@ export class RestDetailsComponent implements OnInit {
 		this.location.back();
 	}
 
-	 login(){
+	login(){
 		 this.router.navigate(["/restdetails"]);
 	}
+
+	
+	next(){
+    	this.router.navigate(["cart"]);
+  	}
 }

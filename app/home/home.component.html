@@ -1,5 +1,5 @@
 <ActionBar title="Home">
-    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+<NavigationButton text="Back" ios.position="left" class="nodisp"></NavigationButton>
 </ActionBar>
 <GridLayout>
 <BottomNavigation >
@@ -14,7 +14,7 @@
         </TabStripItem>
         <TabStripItem class="special" >
            
-            <Image src="font://&#xf07a;" class="fas t-36"></Image>
+            <Image src="font://&#xf07a;" class="fas t-36" ></Image>
         </TabStripItem>
          <TabStripItem class="special" >
            
@@ -27,16 +27,17 @@
         
   
     <StackLayout  style="text-align:center;">
-        <ScrollView orientation="horizontal" style="vertical-align:top;" height="50">
+        <TextField class="input" hint="Zip" keyboardType="number"
+                        style="background-color:white;padding:40px 10px 40px 10px;border-radius:10px;width:100%;text-align:center;"
+                        autocorrect="false" autocapitalizationType="none">
+                        </TextField>
+
+                    <ScrollView orientation="horizontal" style="vertical-align:top;" height="50">
             <GridLayout columns="auto auto auto auto auto auto ">
                 <Label   class="h3 m-15" col="1" text="Zip : Title 1">
                 </Label>
             </GridLayout>
         </ScrollView>
-       <SearchBar hint="Search hint" [text]="searchPhrase"  
-    (submit)="onSearchSubmit($event)"  style="text-align:center; vertical-align:top;"></SearchBar>
-   <Button class="btn btn-primary w-full" text="Cancel search"
-                    (tap)="onClear()"></Button>
     <ScrollView >
     <StackLayout  style="text-align:center;">
         <label text="Today's Special" class="searcbannerheader"></label>
@@ -239,7 +240,7 @@
     <GridLayout class="m-15"
         columns="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto">
          
-           <Label   width="20" height="70" class="far h3 m-15" col="0" text="&#xf2b9;" (tap)="onOpenDrawerTap()">
+        <Label   width="20" height="70" class="far h3 m-15" col="0" text="&#xf2b9;" (tap)="onOpenDrawerTap()">
         </Label>
         <Label  height="50" class="h3 m-15" col="1" text="Zip : Title 1">
         </Label>
@@ -252,35 +253,92 @@
     </GridLayout>
 </ScrollView>
 <Label [text]="mainContentText" textWrap="true" fontSize="13" padding="10"></Label>
- <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1250px">
+ <ListView [items]="countries" (itemTap)="getDetails()" style="height:1250px">
   <ng-template let-country="item">
-       
   <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >      
     <Image [src]="country.imageSrc" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
     <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
     <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
     <Label [text]="country.grid" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
-  
   </GridLayout>
 </ng-template>
 </ListView>
-                   
-                </StackLayout>
-            </RadSideDrawer>   
+</StackLayout>
+</RadSideDrawer>   
             
  
 </ScrollView>    
 </GridLayout>
 </TabContentItem>
- <TabContentItem>
-     <GridLayout>
-          <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
-     </GridLayout>
+
+<TabContentItem >
+
+ <GridLayout backgroundColor="#CCCCCC">
+
+    <ScrollView>
+      
+      <StackLayout orientation="vertical" verticalAlignment="top" >
+        
+        <Image src="https://play.nativescript.org/dist/assets/img/flags/au.png" rowSpan="2" width="152"  margin="3" ></Image>  
+        <Label text="John Smith hi" fontSize="14" col="2" row="1" verticalAlignment="top"  margin="10"></Label>
+        <Label text="John Smith hi" fontSize="14" col="2" row="2" verticalAlignment="top"  margin="10"></Label>
+      
+        <ListView [items]="countries"   verticalAlignment="center">
+            <ng-template let-country="item">
+              <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >                 
+                <Label [text]="country.name" textWrap="true" col="1" row="1" fontSize="12" width="80%"   ></Label>         
+                <Label [text]="country.grid" (tap)="deleteItem($event)" col="12" row="1" width="20%" color="#10C2B0" fontSize="12"    style="float:right;margin-left:20;"></Label>  
+              </GridLayout>
+            </ng-template>
+        </ListView>
+     
+      <Button class="-primary" text="Clear cart >"  ></Button>
+      <Button class="-primary" text="Check out >" (tap)="checkout()"></Button>
+
+      </StackLayout>   
+
+  </ScrollView>
+    
+</GridLayout>
+
  </TabContentItem>
+
  <TabContentItem>
-     <GridLayout>
-          <Label text="settings" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
-     </GridLayout>
+
+     <GridLayout backgroundColor="#CCCCCC" >
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="top">
+       
+      
+            <Label text="Settings" class="label font-weight-bold m-b-5">
+                    </Label>
+            
+          <StackLayout class="form settings"  backgroundColor="#FFFFFF" verticalAlignment="center" width="100%" height="50"  >
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%"  >
+                    <Label text="Your details"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="deliverydetails()"></Label>
+                         <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                        
+                        <Image src="font://&#xf054;" class="fas t-36 right" (tap)="deliverydetails()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+             </StackLayout>
+            
+            
+                
+      
+            
+            <Button class="-primary" text="Save"></Button>  
+             
+        </StackLayout>
+
+    </ScrollView>
+    
+</GridLayout>
  </TabContentItem>
 </BottomNavigation>
 </GridLayout>

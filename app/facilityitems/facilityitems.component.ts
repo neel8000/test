@@ -1,6 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { Location } from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
+import { ViewChild } from "@angular/core";
+import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedrawer/angular";
+import { EventData, Observable } from "tns-core-modules/data/observable";
+import { Button } from "tns-core-modules/ui/button";
+import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
+import { Page } from "tns-core-modules/ui/page";
+import { request, getFile, getImage, getJSON, getString } from "tns-core-modules/http";
+import { ItemEventData } from "tns-core-modules/ui/list-view";
+import { SearchBar } from "tns-core-modules/ui/search-bar";
+import { Location } from "@angular/common";
+import * as utils from "utils/utils";
+import { isIOS, isAndroid } from "platform";
+import * as Frame from "ui/frame";
 
 @Component({
 	selector: "Facilityitems",
@@ -9,22 +21,23 @@ import {ActivatedRoute} from "@angular/router";
 	styleUrls: ['./facilityitems.component.css']
 })
 export class FacilityitemsComponent implements OnInit {
-	public input: any;
-	public  countries:any[];
-	public name :any;
-	public paramRoute:any;
+	public input1: any;
+	public  countries1:any[];
+	public name1:any;
+	public paramRoute1:any;
 
-	constructor(private location: Location,private route: ActivatedRoute) {
-		this.paramRoute=route;
-		this.input = {
+	constructor(private router: Router,private location: Location,private route: ActivatedRoute) {
+		this.paramRoute1=route;
+
+		this.input1 = {
 			"firstname": "",
 			"lastname": "",
 			"email": "",
 			"password": ""
 		}
 
-		this.name = this.paramRoute.snapshot.params['id'];
-		console.log("---------------"+this.name);
+		this.name1 = this.paramRoute1.snapshot.params['id'];
+		console.log("---------------"+this.name1);
 
 		  let countriesA=[
             
@@ -41,19 +54,18 @@ export class FacilityitemsComponent implements OnInit {
 
         ];
 
-		this.countries=[];
-try{
-		for(var t in countriesA){
-console.log("===============");
-console.log(countriesA[t]["grid"]);
-console.log(this.name);
-			if(countriesA[t]["grid"]==this.name){
-				this.countries.push(countriesA[t]);
-				
-				console.log(t);
+		this.countries1=[];
+		try{
+			for(var t in countriesA){
+			console.log("===============");
+			console.log(countriesA[t]["grid"]);
+			console.log(this.name1);
+						if(countriesA[t]["grid"]==this.name1){
+							this.countries1.push(countriesA[t]);
+							console.log(t);
+						}
 			}
-		}
-}catch(err){}
+		}catch(err){}
 		
 	}
 
@@ -63,7 +75,7 @@ console.log(this.name);
 	}
 
 	public register() {
-		if (this.input.firstname && this.input.lastname && this.input.email && this.input.password) {
+		if (this.input1.firstname && this.input1.lastname && this.input1.email && this.input1.password) {
 		//	ApplicationSettings.setString("account", JSON.stringify(this.input));
 			this.location.back();
 		} else {
@@ -74,4 +86,10 @@ console.log(this.name);
 	public goBack() {
 		this.location.back();
 	}
+
+	onItemTap(args: ItemEventData): void {
+        
+        console.log('Item with index: ' +this.countries1[args.index].grid + ' tapped');
+        this.router.navigate(["getdetails/"+this.countries1[args.index].grid]);
+    }
 }

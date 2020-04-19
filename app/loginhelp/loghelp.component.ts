@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
-
+import { isIOS, isAndroid } from "platform";
+import * as Frame from "ui/frame";
 
 @Component({
 	selector: "Loginhelp",
@@ -37,5 +38,12 @@ export class LoghelpComponent implements OnInit {
 
 	 login(){
 		 this.router.navigate(["/home"]);
+		 if (isIOS) {
+          const controller = Frame.topmost().ios.controller;
+          const navigationItem = controller.visibleViewController.navigationItem;
+          console.log("This is IOS");
+        // hide back button
+        navigationItem.setHidesBackButtonAnimated(true, false);
+        }
 	}
 }

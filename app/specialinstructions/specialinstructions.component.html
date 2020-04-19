@@ -1,0 +1,34 @@
+<ActionBar title="Special Instructions">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+       <StackLayout margin="10" verticalAlignment="top">
+            
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 
+                <StackLayout class="input-field">
+                    <Label text="Add delivery instructions"
+                        class="label font-weight-bold m-b-5"></Label>
+                  
+
+                    <TextView [(ngModel)]="input.firstname" secure="false"  autocorrect="true" maxLength="200"></TextView>
+                    <TextView editable="false">
+            <FormattedString>
+                <Span
+                    text="If you have any special delivery instructions then you can add here.  ">
+                </Span>
+                <Span text="There is alimit of 100 words." fontWeight="Bold"></Span>
+                
+            </FormattedString>
+        </TextView>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+              <Button class="-primary" text="Save"></Button>  
+                
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    
+</GridLayout>

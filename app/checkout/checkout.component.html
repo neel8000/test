@@ -1,0 +1,178 @@
+<ActionBar title="Checkout">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="top">
+       
+        <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                  
+                <StackLayout class="input-field">
+                    <Label text="Get new exiting offers !!!!!"
+                        class="label font-weight-bold m-b-5"></Label>
+                    
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+            <Label text="Your Information" class="label font-weight-bold m-b-5">
+                    </Label>
+             <Label text="" class="label font-weight-bold m-b-5">
+                    </Label>
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%" >
+                    <Label text="Delivery details"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="deliverydetails()"></Label>
+                         <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                        
+                        <Image src="font://&#xf054;" class="fas t-36 right" (tap)="deliverydetails()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+            <Label text="" class="label font-weight-bold m-b-5">
+                    </Label>
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%">
+                    <Label text="Special instructions"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="specialinst()"></Label>
+                          <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                       <Image src="font://&#xf054;" class="fas t-36 right" (tap)="specialinst()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+            <Label text="Payment Information" class="label font-weight-bold m-b-5">
+                    </Label>
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%">
+                    <Label text="Mode of payment"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="modeofpayment()"></Label>
+                          <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                       <Image src="font://&#xf054;" class="fas t-36 right" (tap)="modeofpayment()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+            <Label text="Order Information" class="label font-weight-bold m-b-5">
+                    </Label>
+             <StackLayout class="hr m-10"></StackLayout>       
+            <Label text="Estimated delivery : 40-50 mins" class="label font-weight-bold m-b-5">
+                    </Label> 
+                     <Label text="**If the wait time is more then 1 hour " class="label font-weight-bold m-b-3">
+                    </Label> 
+                    <Label text="then we suggest you to call the business directly." class="label font-weight-bold m-b-3">
+                    </Label> 
+                    <Label text="We will not be responsible for late delivery " class="label font-weight-bold m-b-3">
+                    </Label>
+                    <Label text="or dishonered orders.**" class="label font-weight-bold m-b-3">
+                    </Label>
+                    <StackLayout class="hr m-10"></StackLayout>
+            <Label text="Anotil's restaurant" class="label font-weight-bold m-b-5">
+                    </Label>
+            <Label text="1 big pizza" class="label ">
+                    </Label> 
+                    <Label text="6.00" class="label right">
+                    </Label>
+            <Label text="3 Fries" class="label ">
+                    </Label> 
+                     <Label text="7.00" class="label right">
+                    </Label> 
+            <StackLayout class="hr m-10"></StackLayout>  
+             <Label text="Total" class="label font-weight-bold m-b-5">
+                    </Label> 
+                     <Label text="13.00" class="label right font-weight-bold m-b-5">
+                    </Label>   
+            <StackLayout class="hr m-10"></StackLayout> 
+
+           
+                <Label
+                    text="By cliking on 'pay' button you agree with our   ">
+                </Label>
+                 <Button class="btn btn-primary" text="terms and conditions **" style="font-size: smaller;background-color: gray;"></Button>
+            
+                
+       
+                          <Button class="-primary" text="Pay"></Button>  
+
+
+
+<!--<GridLayout>                       
+  <ScrollView>
+
+ <RadSideDrawer drawerLocation="Right">
+
+                <StackLayout tkDrawerContent >
+                    <StackLayout height="556" style="text-align:center;">
+                        <Label text="Search"  class="searcbannerheader"></Label>
+                        <TextField class="input" hint="Zip" keyboardType="number"
+                        style="background-color:white;padding:40px 10px 40px 10px;border-radius:10px;width:100%;text-align:center;"
+                        autocorrect="false" autocapitalizationType="none">
+                        </TextField>
+                        <Label text="Select a cuisine"   class="searcbanner"></Label>
+                        <ListPicker [items]="listPickerCountries" class="picker"  [(ngModel)]="selectedListPickerIndex"></ListPicker>
+                         <Label text="Order type"   class="searcbanner"></Label>
+                        <ListPicker [items]="orderTypes" class="picker"  [(ngModel)]="selectedListPickerIndex"></ListPicker>
+
+                        
+                        <Button text="Go >" type="button" class="btn btn-secondary"
+                        style=" background-color:#eee;border-radius:20px;padding:30px 20px 30px 20px;width:95%"
+                        (tap)="onCloseDrawerTap()">
+                        </Button> 
+                        <Label text="Recent searches"  style="paddin-top:50" class="searcbanner"></Label>
+                   </StackLayout>
+                </StackLayout>
+
+                <StackLayout tkMainContent>
+                   
+                    <ScrollView orientation="horizontal">
+    <GridLayout class="m-15"
+        columns="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto">
+         
+        <Label   width="20" height="70" class="far h3 m-15" col="0" text="&#xf2b9;" (tap)="onOpenDrawerTap()">
+        </Label>
+        <Label  height="50" class="h3 m-15" col="1" text="Zip : Title 1">
+        </Label>
+        <Label height="50" class="h3 m-15" col="2" text="Cuisine : Title 2">
+        </Label>
+         <Label  height="50" class="h3 m-15" col="3" text="Order type : Title 3">
+        </Label>
+       
+       
+    </GridLayout>
+</ScrollView>
+<Label [text]="mainContentText" textWrap="true" fontSize="13" padding="10"></Label>
+ <ListView [items]="countries" (itemTap)="onItemTap($event)" style="height:1250px">
+  <ng-template let-country="item">
+       
+  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >      
+    <Image [src]="country.imageSrc" rowSpan="2" width="152"  margin="3" verticalAlignment="top"></Image>   
+    <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+    <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+    <Label [text]="country.grid" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+  
+  </GridLayout>
+</ng-template>
+</ListView>
+                   
+                </StackLayout>
+            </RadSideDrawer>   
+            
+ 
+</ScrollView>    
+</GridLayout>-->
+             
+        </StackLayout>
+
+    </ScrollView>
+    
+</GridLayout>

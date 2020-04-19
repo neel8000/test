@@ -36,4 +36,5 @@ export class RegistrationComponent implements OnInit {
 	public goBack() {
 		this.location.back();
 	}
+
 }
