@@ -1,0 +1,51 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" shownModally="onShownModally" (tap)="cleartList()">
+<StackLayout >
+      <WrapLayout style="border-radius:5px;border-style:solid;border-color:black;border-width:1px;padding-left:10px;padding-right:10px;background-color: rgb(230, 230, 230);" width="95%" marginTop="20">
+            <Image src="font://&#xf359;" class="fas t-36" height="35" width="20"  style="border-top-color:black;" (tap)="goHome()"></Image>
+            <SearchBar 
+                  hint="Enter search term here ..."
+                  [text]="searchPhrase" 
+                  (textChange)="onTextChanged($event)" 
+                  (clear)="onClear($event)" 
+                  (submit)="onSubmit($event)" 
+                  (tap)="cleartList()"
+                  style="width:92%;float:right;border-radius: 5px; opacity:1;background-color: rgb(230, 230, 230);border-top-width:1px;border-top-color:black;"  
+                  height="35" >
+            </SearchBar>
+</WrapLayout>
+     
+        
+<WrapLayout style="border-radius:5px;border-style:solid;border-color:black;border-width:1px;padding-left:10px;padding-right:10px;background-color: rgb(230, 230, 230);" 
+            width="95%" 
+            marginTop="5">
+            <Image src="font://&#xf124;" class="fas t-36" height="35" width="20"  style="border-top-color:black;" (tap)="goHome()"></Image>
+            <SearchBar 
+                  hint="Location"
+                  [text]="locationStr" 
+                  (textChange)="onLocationChanged($event)" 
+                  (clear)="onClearLoc($event)" 
+                  (tap)="cleartList()"
+                  (submit)="onLocSubmit($event)" 
+                  style="width:92%;float:right;border-radius: 5px; opacity:1;background-color: rgb(230, 230, 230);border-top-width:1px;border-top-color:black;"  
+                  height="35" >
+            </SearchBar>
+</WrapLayout>
+
+<ListView [items]="searched" separatorColor="white" [visibility]="showelemSearch" horizontalAlignment="center">
+            <ng-template let-country="item">        
+                <StackLayout  verticalAlignment="top" backgroundColor="white" style="padding:5" >  
+                  <Label [text]="country.name" textWrap="true"  fontSize="12"  (tap)="setSearchStr(country.name)" ></Label> 
+                </StackLayout>
+            </ng-template>
+</ListView> 
+
+<ListView [items]="locList" separatorColor="white" [visibility]="showelemLoc" horizontalAlignment="center">  
+      <ng-template let-country="item">        
+          <StackLayout  verticalAlignment="top" backgroundColor="white" style="padding:5" >  
+            <Label [text]="country.name" textWrap="true"  fontSize="12"  (tap)="setLocation(country.name)" ></Label> 
+          </StackLayout>
+      </ng-template>
+</ListView> 
+
+</StackLayout>
+</Page>

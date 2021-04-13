@@ -1,0 +1,106 @@
+<ActionBar title="Search Results" backgroundColor="#ff5533" fontColor="white">
+</ActionBar>
+<BottomNavigation >
+   <TabStrip>
+        <TabStripItem (tap)="goHome()" backgroundColor="#ff5533" fontColor="white">
+            <Image src="font://&#xf015;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="special" (tap)="search()" backgroundColor="#ff5533" fontColor="white">
+            <Image src="font://&#xf002;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="special" (tap)="goToCart()" backgroundColor="#ff5533" fontColor="white">
+            <Image src="font://&#xf07a;" class="fas t-36" ></Image>
+        </TabStripItem>
+         <TabStripItem class="special" backgroundColor="#ff5533" fontColor="white">
+            <Image src="font://&#xf013;" class="fas t-36" ></Image>
+        </TabStripItem>
+    </TabStrip>
+    <TabContentItem >
+
+  <GridLayout >
+  
+  
+ <StackLayout >
+    <ScrollView orientation="horizontal" > 
+    
+         <Label  height="50" class="h3 m-15" col="3" text="Order type : Title 3">
+        </Label> 
+
+</ScrollView>   
+  <GridLayout>
+<Label [text]="mainContentText" textWrap="true" fontSize="13" padding="10"></Label>
+ <ListView [items]="countries" (itemTap)="getDetails()" [height]=screenHeight>
+  <ng-template let-country="item">
+  <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >      
+    <Image [src]="country.imageSrc" rowSpan="2" width="140"  margin="3" verticalAlignment="top" class="roundimage"></Image>  
+    <Label [text]="country.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="12" margin="3"></Label>
+    <Label text="John Smith" col="1" row="1" fontSize="10" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+    <Label [text]="country.grid" col="2" row="1" color="#10C2B0" fontSize="10" verticalAlignment="bottom" margin="3"></Label>
+  </GridLayout>
+</ng-template>
+</ListView></GridLayout>
+</StackLayout>
+
+ </GridLayout >
+ </TabContentItem>
+  <TabContentItem >
+<GridLayout ></GridLayout>
+  </TabContentItem>
+  <TabContentItem >
+<GridLayout ></GridLayout>
+  </TabContentItem>
+  <TabContentItem >
+ <GridLayout backgroundColor="#CCCCCC" >
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="top">
+            <Label text="Settings" class="label font-weight-bold m-b-5">
+                    </Label>
+          <StackLayout class="form settings"  backgroundColor="#FFFFFF" verticalAlignment="center" width="100%" height="50"  >
+                <StackLayout class="input-field" orientation="horizontal" width="100%"  >
+                    <Label text="Your details"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="deliverydetails()"></Label>
+                         <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                        <Image src="font://&#xf054;" class="fas t-36 right" (tap)="deliverydetails()"></Image>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+             </StackLayout>  
+             <Label text="" class="label font-weight-bold m-b-5">
+                    </Label>
+            
+          <StackLayout class="form settings"  backgroundColor="#FFFFFF" verticalAlignment="center" width="100%" height="50"  >
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%"  >
+                    <Label text="Order history"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="orderHistory()"></Label>
+                         <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                        
+                        <Image src="font://&#xf054;" class="fas t-36 right" (tap)="orderHistory()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+             </StackLayout>
+
+             <Label text="" class="label font-weight-bold m-b-5">
+                    </Label>
+
+             <StackLayout class="form settings"  backgroundColor="#FFFFFF" verticalAlignment="center" width="100%" height="50"  >
+                 
+                <StackLayout class="input-field" orientation="horizontal" width="100%"  >
+                    <Label text="Contact us"
+                        class="label font-weight-bold m-b-5" width="50%" (tap)="contact()"></Label>
+                         <Label text=""
+                        class="label font-weight-bold m-b-5 right" width="45%"></Label>
+                        
+                        <Image src="font://&#xf054;" class="fas t-36 right" (tap)="contact()"></Image>
+                   
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+             </StackLayout>
+        </StackLayout>
+    </ScrollView>    
+</GridLayout>
+  </TabContentItem>
+</BottomNavigation>
+

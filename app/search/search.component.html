@@ -1,0 +1,17 @@
+<ActionBar title="Search" backgroundColor="#ff5533" fontColor="white">
+</ActionBar>
+  <GridLayout >
+ <StackLayout  style="text-align:center;" verticalAlignment="top">
+        
+        <TextField class="input" hint="Zip" keyboardType="number" style="background-color:white;padding:40px 10px 40px 10px;border-radius:10px;width:100%;text-align:center;" autocorrect="false" autocapitalizationType="none"></TextField>
+        <Label text="Select a cuisine"   class="searcbanner"></Label>
+        <ListPicker [items]="listPickerCountries" class="picker"  [(ngModel)]="selectedListPickerIndex"></ListPicker>
+        <Label text="Order type"  class="searcbanner"></Label>
+        <ListPicker [items]="orderTypes" class="picker"  [(ngModel)]="selectedListPickerIndex"></ListPicker>
+        <Button class="-primary" text="Search" (tap)="getDetails()" style="border-radius:20px;" ></Button>
+     
+</StackLayout>
+
+ </GridLayout >
+
+

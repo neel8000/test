@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Location } from "@angular/common";
 export class OrderSummaryComponent implements OnInit {
 	public input: any;
 
-	constructor(private location: Location) {
+	constructor(private location: Location,private router: Router) {
 		this.input = {
 			"firstname": "",
 			"lastname": "",
@@ -24,16 +25,11 @@ export class OrderSummaryComponent implements OnInit {
 		console.log("reg1");
 	}
 
-	public ordersummary() {
-		if (this.input.firstname && this.input.lastname && this.input.email && this.input.password) {
-		//	ApplicationSettings.setString("account", JSON.stringify(this.input));
-			this.location.back();
-		} else {
-		alert("All Fields Required!");
-		}
+	
+
+	goHome():void{
+		this.router.navigate(["/home"]);
 	}
 
-	public goBack() {
-		this.location.back();
-	}
+
 }

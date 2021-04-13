@@ -1,0 +1,24 @@
+
+<GridLayout backgroundColor="#CCCCCC" backgroundColor="#ff5533" fontColor="white">
+    <ScrollView>
+       <StackLayout orientation="vertical" verticalAlignment="top" >
+            <Image src="https://play.nativescript.org/dist/assets/img/flags/au.png" rowSpan="2" width="152"  margin="3" ></Image>  
+             <Label text="John Smith hi" fontSize="14" col="2" row="1" verticalAlignment="top"  margin="10"></Label>
+             <Label text="John Smith hi" fontSize="14" col="2" row="2" verticalAlignment="top"  margin="10"></Label>
+      
+      <ListView [items]="countries"   verticalAlignment="center">
+          <ng-template let-country="item">
+            <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >                 
+              <Label [text]="country.name" textWrap="true" col="1" row="1" fontSize="12" width="80%"   ></Label>         
+              <Label [text]="country.grid" (tap)="deleteItem($event)" col="12" row="1" width="20%" color="#10C2B0" fontSize="12"    style="float:right;margin-left:20;"></Label>  
+            </GridLayout>
+          </ng-template>
+      </ListView>
+     
+                    <Button class="-primary" text="Clear cart >"  style="border-radius:20px;"></Button>
+                    <Button class="-primary" text="Check out >" (tap)="checkout()" style="border-radius:20px;"></Button>
+      </StackLayout>   
+
+    </ScrollView>
+    
+</GridLayout>

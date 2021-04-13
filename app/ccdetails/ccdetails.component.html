@@ -1,0 +1,80 @@
+<ActionBar title="Credit card details" backgroundColor="#ff5533" fontColor="white">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="top">
+            <Label text="**All fields are mandatory.**" class="label font-weight-bold m-b-5">
+                    </Label>
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+                 <StackLayout class="input-field">
+                  <Label text="Name on card"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.firstname" >
+                    </TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field">
+                <Label text="Card number"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.firstname" >
+                    </TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field">
+                <Label text="Card expiry mm/yy"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.firstname" >
+                    </TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                 <StackLayout class="input-field">
+                <Label text="CVV number"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.firstname" >
+                    </TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field">
+                   <Label text="Billing Address line 1"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.email" >
+                    </TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="input-field">
+                     <Label text="Billing Address line 2"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField secure="true" class="input"
+                        [(ngModel)]="input.password" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                 <StackLayout class="input-field">
+                     <Label text="City"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField secure="true" class="input"
+                        [(ngModel)]="input.password" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                 <StackLayout class="input-field">
+                     <Label text="State"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField secure="true" class="input"
+                        [(ngModel)]="input.password" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                 <StackLayout class="input-field">
+                    <Label text="Zip"
+                        class="label font-weight-bold m-b-5"></Label>
+                    <TextField secure="true" class="input"
+                        [(ngModel)]="input.password" ></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <Button class="-primary" text="Continue >"  style="border-radius:20px;"></Button>
+                
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+    
+</GridLayout>

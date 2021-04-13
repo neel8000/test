@@ -1,24 +1,45 @@
+<ActionBar title="Cart" backgroundColor="#ff5533" fontColor="white">
+<NavigationButton text="Back" ios.position="left"></NavigationButton>
 
-<GridLayout backgroundColor="#CCCCCC">
+
+  
+  <WrapLayout  >
+    <Label text="Cart"   color="black" fontSize="16" marginLeft="60"></Label> 
+    <Label text="Total"   color="black" fontSize="12" marginLeft="110"></Label> 
+    <Label [text]="netPrice"   color="#10C2B0" fontSize="12"  ></Label> 
+  </WrapLayout>
+
+</ActionBar>
+
+<GridLayout >
+
     <ScrollView>
        <StackLayout orientation="vertical" verticalAlignment="top" >
-            <Image src="https://play.nativescript.org/dist/assets/img/flags/au.png" rowSpan="2" width="152"  margin="3" ></Image>  
-             <Label text="John Smith hi" fontSize="14" col="2" row="1" verticalAlignment="top"  margin="10"></Label>
-             <Label text="John Smith hi" fontSize="14" col="2" row="2" verticalAlignment="top"  margin="10"></Label>
-      
-      <ListView [items]="countries"   verticalAlignment="center">
-          <ng-template let-country="item">
-            <GridLayout columns="auto, *, auto" rows="auto, 35" verticalAlignment="top" backgroundColor="white" style="padding:20" >                 
-              <Label [text]="country.name" textWrap="true" col="1" row="1" fontSize="12" width="80%"   ></Label>         
-              <Label [text]="country.grid" (tap)="deleteItem($event)" col="12" row="1" width="20%" color="#10C2B0" fontSize="12"    style="float:right;margin-left:20;"></Label>  
-            </GridLayout>
+       
+      <ListView [items]="countries"   verticalAlignment="center" [height]=screenHeight>
+          <ng-template let-country="item" let-i="index">
+            <StackLayout  verticalAlignment="top" backgroundColor="white" style="padding:20" >  
+              <GridLayout padding="0">               
+              <Label [text]="country.name" textWrap="true"  fontSize="12"   ></Label> 
+              <Label [text]="country.price" textWrap="true"  fontSize="10" class="pricelabel" horizontalAlignment="right"></Label> 
+              </GridLayout>        
+              <WrapLayout padding="0">
+                <Label text="Quantity" (tap)="deleteItem($event)" col="12" row="1"  color="black" fontSize="10"  ></Label> 
+                  <WrapLayout style="border-radius:5px;border-style:solid;border-color:black;border-width:1px;padding:10px;">
+                    <Image src="font://&#xf0fe;" class="fas t-36" (tap)="increment(i)" height="10" width="10" paddingLeft="20"></Image>
+                    <Label [text]="country.quantity"  col="12" row="1"  fontSize="12"  paddingLeft="25" paddingRight="25" ></Label> 
+                    <Image src="font://&#xf068;" class="fas t-36" (tap)="decrement(i)" height="10" width="10" paddingRight="20"></Image>
+                  </WrapLayout>
+                <Label text="   "  col="12" row="1"  color="#10C2B0" fontSize="12"  paddingLeft="20" ></Label> 
+                <Image src="font://&#xf1f8;" class="fas t-36" (tap)="remove(i)" height="10" width="10"></Image> 
+              </WrapLayout>
+            </StackLayout>
           </ng-template>
-      </ListView>
-     
-                    <Button class="-primary" text="Clear cart >"  ></Button>
-                    <Button class="-primary" text="Check out >" (tap)="checkout()"></Button>
-      </StackLayout>   
+      </ListView>     
 
+      <ActivityIndicator [busy]="busySign" ></ActivityIndicator>
+             
+              <Button class="-primary" text="Check out >" (tap)="checkout()" style="border-radius:20px;"></Button>
+      </StackLayout>   
     </ScrollView>
-    
 </GridLayout>

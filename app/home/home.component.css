@@ -9,6 +9,10 @@
     margin-bottom: 15;
 }
 
+.roundimage{
+  border-radius: 5%;
+}
+
 .page {
   align-items: center;
   flex-direction: column;
@@ -48,6 +52,10 @@ padding-right: 10;
   display: none;
 }
 
+.checked {
+  color: orange;
+}
+
 .picker {
     height: 100;
     vertical-align: middle;
@@ -65,7 +73,7 @@ padding-right: 10;
 }
 
 .searcbannerheader{
-  font-size: 35;
+  font-size: 15;
   vertical-align: top;
   background-color: black;
   color:white;
@@ -77,3 +85,27 @@ padding-right: 10;
    padding:10;
    text-align: center;
 }
+
+
+.btnsmallfont{
+  font-size: xx-small;
+  text-align: left;
+  float: left;
+}
+
+.footnote{
+  padding-left:50px; 
+}
+
+
+
+.searchbar {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+

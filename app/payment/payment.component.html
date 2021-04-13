@@ -1,4 +1,4 @@
-<ActionBar title="Payment">
+<ActionBar title="Payment" backgroundColor="#ff5533" fontColor="white">
     <NavigationButton text="Back" ios.position="left"></NavigationButton>
 </ActionBar>
 <GridLayout backgroundColor="#CCCCCC">
@@ -37,7 +37,7 @@
                     <StackLayout class="hr-light"></StackLayout>
                 </StackLayout>
                 <Button class="btn btn-primary w-full" text="Register"
-                    (tap)="register()"></Button>
+                    (tap)="register()" style="border-radius:20px;"></Button>
                 <Label (tap)="goBack()" text="Already a member? Login here."
                     class="text-center footnote"></Label>
             </StackLayout>

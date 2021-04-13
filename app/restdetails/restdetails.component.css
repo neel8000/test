@@ -36,3 +36,57 @@
     font-family: Font Awesome 5 Free, fa-solid-900;
     font-weight: 900; 
 }
+
+button {
+    font-size: 15;
+    horizontal-align: center;
+}
+
+RadSideDrawer .drawerContentText {
+    font-size: 13;
+    padding: 10;
+}
+
+RadSideDrawer .drawerContentButton {
+    margin: 10;
+    horizontal-align: left;
+}
+
+.sideStackLayout {
+    background-color: gray;
+}
+
+.sideTitleStackLayout {
+    text-align: center;
+    vertical-align: center;
+}
+
+.sideLabel {
+    padding: 10;
+}
+
+
+.backbutton{
+  float: left;
+  left: 150px;
+  border: 3px solid green;
+  position: absolute;
+}
+
+.picker {
+    height: 100;
+    vertical-align: middle;
+    font-size: 12;
+}
+
+
+.nextbutton{
+  float: right;
+  right: 150px;
+  border: 3px solid green;
+  position: absolute;
+}
+
+.roundimage{
+  border-radius: 5%;
+}

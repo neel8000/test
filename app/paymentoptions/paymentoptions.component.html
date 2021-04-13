@@ -1,0 +1,14 @@
+<ActionBar title="Payment options" backgroundColor="#ff5533" fontColor="white">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout >
+  <ListView [items]="paymentOptions"  >
+      <ng-template let-opt="item">
+          <WrapLayout >
+                  <Image [src]="opt.imageSrc" rowSpan="2" width="50" height="50"  class="fas t-36" (tap)="goTo(opt.tap)"></Image> 
+                  <Label [text]="opt.name" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" (tap)="goTo(opt.tap)"></Label>
+          </WrapLayout>  
+      </ng-template>
+</ListView>
+    
+</GridLayout>

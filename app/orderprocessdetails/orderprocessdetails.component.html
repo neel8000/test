@@ -1,0 +1,149 @@
+<ActionBar title="Order Summary" backgroundColor="#ff5533" fontColor="white">
+    
+  
+  <WrapLayout  >
+    <Label text="Order Summary"   color="black" fontSize="16" marginLeft="80"></Label> 
+    <Image src="font://&#xf02f;" class="fas t-36" height="20" width="20" marginLeft="90"></Image>
+  </WrapLayout>
+
+</ActionBar>
+<GridLayout >
+    
+
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="top">
+          
+            <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+            
+                         <StackLayout class="hr-light"></StackLayout>
+                <StackLayout class="input-field">
+                   
+                        <Label text="Anotil's restaurant" class="label font-weight-bold m-b-5" ></Label>
+                    
+                    <Label text="Order Id : 234345323" class="label font-weight-bold m-b-5"></Label>
+                </StackLayout>
+                <StackLayout class="input-field"></StackLayout>
+                <StackLayout class="input-field">
+                    <Label text="Order date : 12/05/2020" class="label font-weight-bold m-b-5">
+                    </Label>
+                    <Label text="Status : delevered" class="label font-weight-bold m-b-5">
+                    </Label>
+                    <GridLayout height="100">
+                    <MapView #mapView (mapReady)="onMapReady($event)" latitude="37.785834" longitude="-122.406417"
+                    [zoom]="zoom" 
+                    [tilt]="tilt" i-padding="50,50,50,50" [padding]="padding" (mapReady)="onMapReady($event)"
+                    [myLocationEnabled]="true" class="roundimage"></MapView>
+                    </GridLayout>
+
+
+                    <Progress [value]=progressValue scale="100" maxValue="100"  backgroundColor="#ff5533" (valueChanged)="onValueChanged($event)" style="margin-top:40"></Progress>
+                </StackLayout>
+                <StackLayout class="input-field">
+                     <StackLayout class="hr m-10"></StackLayout>
+            
+            <Label text="1 big pizza" class="label ">
+                    </Label> 
+                    <Label text="6.00" class="label right">
+                    </Label>
+            <Label text="3 Fries" class="label ">
+                    </Label> 
+                     <Label text="7.00" class="label right">
+                    </Label> 
+            <StackLayout class="hr m-10"></StackLayout>  
+             <Label text="Total" class="label font-weight-bold m-b-5">
+                    </Label> 
+                     <Label text="13.00" class="label right font-weight-bold m-b-5">
+                    </Label> 
+                </StackLayout>
+             
+            </StackLayout>
+            
+       
+           <!-- <Label text="{N} Geolocation Example"></Label>
+            <Label text="Latitude: {{ latitude }}"></Label>
+            <Label text="Longitude: {{ longitude }}"></Label>
+            <Button class="btn btn-primary btn-active" text="Update" (tap)="updateLocation()"></Button>
+            <Button class="btn btn-primary btn-active" text="Watch Location" (tap)="startWatchingLocation()"></Button>
+            <Button class="btn btn-primary btn-active" text="Stop Watching" (tap)="stopWatchingLocation()"></Button>-->
+
+             <ScrollView orientation="horizontal" style="vertical-align:top;" height="180">
+            <GridLayout  columns="auto auto auto auto auto auto "> 
+                <StackLayout col="1" class="specials">
+                <Label class="footnote" text="The image above is the NativeScript logo"></Label>
+                <Image src="~/images/02.jpg" rowSpan="2" width="152" height="100"  margin="3" verticalAlignment="top" (tap)="getDetails()" class="roundimage"></Image>
+                  <WrapLayout >
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+
+                     
+
+                     <Label class="footnote" text="Grab it !!" ></Label>
+
+
+                     <Image src="font://&#xf156;" class="fas t-36 footnote" width="15" height="10" style="margin-left:30px;"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+
+                     <Label class="footnote" text="Delevering" ></Label>
+
+                  </WrapLayout>
+                 
+                 </StackLayout>
+                  <StackLayout col="2" class="specials">
+                <Label class="footnote" text="The image above is the NativeScript logo"></Label>
+                <Image src="~/images/02.jpg" rowSpan="2" width="152" height="100"   margin="3" verticalAlignment="top" class="roundimage"></Image>
+                  <WrapLayout >
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+
+                     
+
+                     <Label class="footnote" text="Grab it !!" ></Label>
+
+
+                     <Image src="font://&#xf156;" class="fas t-36 footnote" width="15" height="10" style="margin-left:30px;"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+
+                     <Label class="footnote" text="Hosting" ></Label>
+
+                  </WrapLayout>
+                 </StackLayout>
+                 <StackLayout col="3" class="specials">
+                 <Label class="footnote" text="The image above is the NativeScript logo"></Label>
+                <Image src="~/images/03.jpg" rowSpan="2" width="152" height="100"   margin="3" verticalAlignment="top" class="roundimage"></Image>
+                  <WrapLayout >
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf005;" class="fas t-36 " width="15" height="10"></Image>
+
+                     
+
+                     <Label class="footnote" text="Grab it !!" ></Label>
+
+
+                     <Image src="font://&#xf156;" class="fas t-36 footnote" width="15" height="10" style="margin-left:30px;"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+                     <Image src="font://&#xf156;" class="fas t-36 " width="15" height="10"></Image>
+
+                     <Label class="footnote" text="Delevering" ></Label>
+
+                  </WrapLayout>
+                 </StackLayout>
+            </GridLayout>    
+        </ScrollView>
+
+           
+
+        </StackLayout>
+
+
+        
+
+    </ScrollView>
+
+    <Button class="-primary" col="3" row="50" text="Order again >"
+        style="border-radius:20px;" verticalAlignment="bottom"></Button>
+    
+</GridLayout>

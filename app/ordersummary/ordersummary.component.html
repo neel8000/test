@@ -1,45 +1,52 @@
-<ActionBar title="OrderSummary">
-    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+<ActionBar title="Order Summary" backgroundColor="#ff5533" fontColor="white">
+<NavigationButton text="Back" ios.position="left"></NavigationButton>
 </ActionBar>
 <GridLayout backgroundColor="#CCCCCC">
     <ScrollView>
-        <StackLayout margin="10" verticalAlignment="center">
-            <Label text="**All fields are mandatory.**" class="label font-weight-bold m-b-5">
-                    </Label>
+        <StackLayout margin="10" verticalAlignment="top">
+          
             <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
-                 
+                 <Label text="Pre-Authorization completed. "
+                        class="h2"></Label> 
+                         <StackLayout class="hr-light"></StackLayout>
                 <StackLayout class="input-field">
-                    <Label text="First Name"
+                    <Label text="Order Id : 234345323"
                         class="label font-weight-bold m-b-5"></Label>
-                    <TextField class="input" [(ngModel)]="input.firstname">
-                    </TextField>
-                    <StackLayout class="hr-light"></StackLayout>
+                  
+                   
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label text="Last Name"
+                    <Label textWrap="true" text="An email confirmation has been sent to jj@dfdf.com.We are waiting for your order to be picked up. You will be notified  about your order, when it is picked up."
                         class="label font-weight-bold m-b-5"></Label>
-                    <TextField class="input" [(ngModel)]="input.lastname">
-                    </TextField>
-                    <StackLayout class="hr-light"></StackLayout>
+                    
+                   
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label text="Email" class="label font-weight-bold m-b-5">
+                    <Label text="Order date : 12/05/2020" class="label font-weight-bold m-b-5">
                     </Label>
-                    <TextField class="input" [(ngModel)]="input.email">
-                    </TextField>
-                    <StackLayout class="hr-light"></StackLayout>
+                   
                 </StackLayout>
                 <StackLayout class="input-field">
-                    <Label text="Password"
-                        class="label font-weight-bold m-b-5"></Label>
-                    <TextField secure="true" class="input"
-                        [(ngModel)]="input.password"></TextField>
-                    <StackLayout class="hr-light"></StackLayout>
+                     <StackLayout class="hr m-10"></StackLayout>
+            <Label text="Anotil's restaurant" class="label font-weight-bold m-b-5">
+                    </Label>
+            <Label text="1 big pizza" class="label ">
+                    </Label> 
+                    <Label text="6.00" class="label right">
+                    </Label>
+            <Label text="3 Fries" class="label ">
+                    </Label> 
+                     <Label text="7.00" class="label right">
+                    </Label> 
+            <StackLayout class="hr m-10"></StackLayout>  
+             <Label text="Total" class="label font-weight-bold m-b-5">
+                    </Label> 
+                     <Label text="13.00" class="label right font-weight-bold m-b-5">
+                    </Label> 
                 </StackLayout>
-                <Button class="btn btn-primary w-full" text="Register"
-                    (tap)="register()"></Button>
-                <Label (tap)="goBack()" text="Already a member? Login here."
-                    class="text-center footnote"></Label>
+                <Button class="-primary" text="Continue ordering >"
+                    (tap)="goHome()" style="border-radius:20px;"></Button>
+                
             </StackLayout>
         </StackLayout>
 

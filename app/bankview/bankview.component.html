@@ -1,0 +1,8 @@
+<ActionBar title="Declaration" backgroundColor="#ff5533" fontColor="white">
+    <NavigationButton text="Back" ios.position="left"></NavigationButton>
+</ActionBar>
+<GridLayout columns="*">
+    
+    <WebView loaded="onFirstWebViewLoaded"   (loadFinished)="loadFinished($event)" (propertyChangeEvent)="propertyChangeEvent($event)"  [src]="htmlString" height="2000" fontSize="8" fontWeight="bold"></WebView>       
+    <ActivityIndicator [busy]="busySign"  verticalAlignment="middle"></ActivityIndicator>
+</GridLayout>

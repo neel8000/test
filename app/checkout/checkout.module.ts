@@ -11,6 +11,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { CheckoutRoutingModule } from "./checkout-routing.module";
 import { CheckoutComponent } from "./checkout.component";
+import { ModalComponent } from "../globalmodules/modal.component";
 
 @NgModule({
 	imports: [
@@ -25,10 +26,14 @@ import { CheckoutComponent } from "./checkout.component";
 		NativeScriptFormsModule
 	],
 	declarations: [
-		CheckoutComponent
+		CheckoutComponent,
+		ModalComponent
 	],
 	schemas: [
 		NO_ERRORS_SCHEMA
-	]
+	],
+    entryComponents: [
+        ModalComponent
+    ]
 })
 export class CheckoutModule { }
